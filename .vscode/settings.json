@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "getting-started",
+        "single-file-program"
+    ],
+    "java.project.referencedLibraries": [
+        "single-file-program/commons-lang3-3.18.0/commons-lang3-3.18.0.jar",
+        "single-file-program/commons-lang3-3.18.0.jar"
+    ],
+    "java.dependency.packagePresentation": "hierarchical"
+}

@@ -1,0 +1,8 @@
+#!/usr/lib/jvm/java-21-openjdk-amd64/bin/java --source 21
+//./HelloJava JAVA
+public class HelloJava {
+ 
+    public static void main(String[] args) {
+        System.out.println("Hello " + args[0]);
+    }
+}
