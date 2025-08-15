@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "cn.lixx.oop.Demo",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
             "name": "BicycleDemo",
             "request": "launch",
             "mainClass": "cn.lixx.java.loop.BicycleDemo",
