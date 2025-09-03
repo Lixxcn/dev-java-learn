@@ -6,6 +6,104 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CollectionsTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.CollectionsTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "IteratorTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.IteratorTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "DequeTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.DequeTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "PriorityQueueTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.PriorityQueueTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "QueueTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.QueueTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "SetTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.SetTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "PropertiesTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.PropertiesTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "TreeMapTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.TreeMapTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "EnumMapTest",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.EnumMapTest",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main1",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.hashcode.Main1",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main3",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.map.Main3",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main2",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.map.Main2",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main1",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.map.Main1",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.collection.map.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
             "name": "Demo",
             "request": "launch",
             "mainClass": "cn.lixx.oop.Demo",
