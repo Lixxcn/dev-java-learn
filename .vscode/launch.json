@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FileDemo",
+            "request": "launch",
+            "mainClass": "cn.lixx.io.FileDemo",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
             "name": "CollectionsTest",
             "request": "launch",
             "mainClass": "cn.lixx.collection.CollectionsTest",
