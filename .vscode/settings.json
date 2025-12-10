@@ -7,5 +7,12 @@
         "single-file-program/commons-lang3-3.18.0/commons-lang3-3.18.0.jar",
         "single-file-program/commons-lang3-3.18.0.jar"
     ],
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "maven.terminal.customEnv": [
+        {
+            "environmentVariable": "JAVA_HOME",
+            "value": "/usr/lib/jvm/java-25-openjdk-amd64"
+        }
+    ]
 }
