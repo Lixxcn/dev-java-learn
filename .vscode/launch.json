@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.bridge.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.adapter.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.prototype.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.builder.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.abstractfactory.Main",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
+            "name": "FactoryMethod",
+            "request": "launch",
+            "mainClass": "cn.lixx.designpatterns.FactoryMethod",
+            "projectName": "liaoxuefeng"
+        },
+        {
+            "type": "java",
             "name": "FileDemo",
             "request": "launch",
             "mainClass": "cn.lixx.io.FileDemo",
