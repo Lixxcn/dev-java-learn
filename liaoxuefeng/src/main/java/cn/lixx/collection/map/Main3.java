@@ -1,6 +1,8 @@
 package cn.lixx.collection.map;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Main3 {
     public static void main(String[] args) {

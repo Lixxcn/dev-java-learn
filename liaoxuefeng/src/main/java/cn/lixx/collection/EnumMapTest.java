@@ -1,7 +1,8 @@
 package cn.lixx.collection;
 
 import java.time.DayOfWeek;
-import java.util.*;
+import java.util.EnumMap;
+import java.util.Map;
 
 public class EnumMapTest {
     public static void main(String[] args) {

@@ -26,7 +26,7 @@ public class Main {
 				.setScheme("https") // 设置scheme
 				.setPath("/") // 设置路径
 				.setQuery(Map.of("a", "123", "q", "K&R")) // 设置query
-				.setCredential("Lixx","password")
+				.setCredential("Lixx", "password")
 				.build(); // 完成build
 		System.out.println(url);
 	}

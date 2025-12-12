@@ -13,4 +13,3 @@ public class Main1 {
         System.out.println(map.get("apple")); // 789
     }
 }
-

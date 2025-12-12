@@ -2,7 +2,6 @@ package cn.lixx.designpatterns;
 
 import java.time.LocalDate;
 
-
 class LocalDateFactory {
     static LocalDate fromInt(int yyyyMMdd) {
         int year = yyyyMMdd / 10000;
