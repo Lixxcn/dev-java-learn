@@ -1,8 +1,12 @@
 package cn.lixx.designpatterns.facade;
 
-import cn.lixx.designpatterns.facade.subsystem.*;
-
 import java.util.List;
+
+import cn.lixx.designpatterns.facade.subsystem.ContactManager;
+import cn.lixx.designpatterns.facade.subsystem.MessageManager;
+import cn.lixx.designpatterns.facade.subsystem.MusicManager;
+import cn.lixx.designpatterns.facade.subsystem.PhotoManager;
+import cn.lixx.designpatterns.facade.subsystem.StorageMedia;
 
 /**
  * 备份外观类（外观）
@@ -19,6 +23,7 @@ public class BackupFacade {
 
     /**
      * 构造函数，初始化所有子系统
+     * 
      * @param storageMedia 存储介质
      */
     public BackupFacade(StorageMedia storageMedia) {
@@ -32,6 +37,7 @@ public class BackupFacade {
     /**
      * 一键备份所有数据（核心方法）
      * 这是外观模式的关键方法，为复杂的子系统操作提供简单接口
+     * 
      * @return 备份结果
      */
     public BackupResult oneClickBackup() {
@@ -53,18 +59,22 @@ public class BackupFacade {
 
         try {
             // 2. 备份通讯录
+            System.out.println("\n【1/4】备份通讯录");
             boolean contactBackup = backupContacts();
             result.setContactsBackedUp(contactBackup);
 
             // 3. 备份短信
+            System.out.println("\n【2/4】备份短信");
             boolean messageBackup = backupMessages();
             result.setMessagesBackedUp(messageBackup);
 
             // 4. 备份照片
+            System.out.println("\n【3/4】备份照片");
             boolean photoBackup = backupPhotos();
             result.setPhotosBackedUp(photoBackup);
 
             // 5. 备份音乐
+            System.out.println("\n【4/4】备份音乐");
             boolean musicBackup = backupMusic();
             result.setMusicBackedUp(musicBackup);
 
@@ -92,70 +102,69 @@ public class BackupFacade {
 
     /**
      * 备份通讯录
+     * 
      * @return 是否成功
      */
     public boolean backupContacts() {
-        System.out.println("\n【1/4】备份通讯录");
         System.out.println("----------------------------------------");
         List<ContactManager.Contact> contacts = contactManager.readContacts();
         return contactManager.backupContacts(
-            contacts,
-            storageMedia.getBackupPath("Contacts")
-        );
+                contacts,
+                storageMedia.getBackupPath("Contacts"));
     }
 
     /**
      * 备份短信
+     * 
      * @return 是否成功
      */
     public boolean backupMessages() {
-        System.out.println("\n【2/4】备份短信");
+
         System.out.println("----------------------------------------");
         List<MessageManager.Message> messages = messageManager.readMessages();
         return messageManager.backupMessages(
-            messages,
-            storageMedia.getBackupPath("Messages")
-        );
+                messages,
+                storageMedia.getBackupPath("Messages"));
     }
 
     /**
      * 备份照片
+     * 
      * @return 是否成功
      */
     public boolean backupPhotos() {
-        System.out.println("\n【3/4】备份照片");
+
         System.out.println("----------------------------------------");
         List<PhotoManager.Photo> photos = photoManager.readPhotos();
         return photoManager.backupPhotos(
-            photos,
-            storageMedia.getBackupPath("Photos")
-        );
+                photos,
+                storageMedia.getBackupPath("Photos"));
     }
 
     /**
      * 备份音乐
+     * 
      * @return 是否成功
      */
     public boolean backupMusic() {
-        System.out.println("\n【4/4】备份音乐");
         System.out.println("----------------------------------------");
         List<MusicManager.Song> songs = musicManager.readSongs();
         return musicManager.backupSongs(
-            songs,
-            storageMedia.getBackupPath("Music")
-        );
+                songs,
+                storageMedia.getBackupPath("Music"));
     }
 
     /**
      * 选择性备份
+     * 
      * @param backupContacts 是否备份通讯录
      * @param backupMessages 是否备份短信
-     * @param backupPhotos 是否备份照片
-     * @param backupMusic 是否备份音乐
+     * @param backupPhotos   是否备份照片
+     * @param backupMusic    是否备份音乐
      * @return 备份结果
      */
     public BackupResult selectiveBackup(boolean backupContacts, boolean backupMessages,
-                                       boolean backupPhotos, boolean backupMusic) {
+            boolean backupPhotos, boolean backupMusic) {
         System.out.println("\n╔════════════════════════════════════════════════════╗");
         System.out.println("║          选择性备份功能启动                      ║");
         System.out.println("╚════════════════════════════════════════════════════╝\n");
@@ -175,9 +184,9 @@ public class BackupFacade {
         try {
             int count = 0;
             int total = (backupContacts ? 1 : 0) +
-                       (backupMessages ? 1 : 0) +
-                       (backupPhotos ? 1 : 0) +
-                       (backupMusic ? 1 : 0);
+                    (backupMessages ? 1 : 0) +
+                    (backupPhotos ? 1 : 0) +
+                    (backupMusic ? 1 : 0);
 
             if (backupContacts) {
                 count++;
@@ -217,6 +226,7 @@ public class BackupFacade {
 
     /**
      * 获取数据统计信息
+     * 
      * @return 统计信息
      */
     public DataStatistics getDataStatistics() {
@@ -378,20 +388,19 @@ public class BackupFacade {
         @Override
         public String toString() {
             return String.format(
-                "数据统计:\n" +
-                "- 通讯录: %d 个联系人\n" +
-                "- 短信: %d 条\n" +
-                "- 照片: %d 张 (%.2f MB)\n" +
-                "- 音乐: %d 首 (%.2f MB, %d分%d秒)",
-                contactCount,
-                messageCount,
-                photoCount,
-                photoSize / (1024.0 * 1024),
-                songCount,
-                musicSize / (1024.0 * 1024),
-                musicDuration / 60,
-                musicDuration % 60
-            );
+                    "数据统计:\n" +
+                            "- 通讯录: %d 个联系人\n" +
+                            "- 短信: %d 条\n" +
+                            "- 照片: %d 张 (%.2f MB)\n" +
+                            "- 音乐: %d 首 (%.2f MB, %d分%d秒)",
+                    contactCount,
+                    messageCount,
+                    photoCount,
+                    photoSize / (1024.0 * 1024),
+                    songCount,
+                    musicSize / (1024.0 * 1024),
+                    musicDuration / 60,
+                    musicDuration % 60);
         }
     }
 }
