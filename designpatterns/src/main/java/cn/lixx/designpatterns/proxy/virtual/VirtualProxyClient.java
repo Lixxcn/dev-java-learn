@@ -1,11 +1,20 @@
 package cn.lixx.designpatterns.proxy.virtual;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class VirtualProxyClient extends JFrame {
     private JPanel imagePanel;
@@ -41,22 +50,23 @@ public class VirtualProxyClient extends JFrame {
         String url = urlField.getText();
         System.out.println("Analyzing URL: " + url);
 
-        // SIMULATION: In a real app, we would parse the HTML at 'url' to find <img> tags.
+        // SIMULATION: In a real app, we would parse the HTML at 'url' to find <img>
+        // tags.
         // Here, we simulate finding 3 images.
         List<ImageProxy> foundImages = new ArrayList<>();
-        
+
         // Using placeholder image service for demonstration
-        foundImages.add(new ImageProxy("https://via.placeholder.com/300/0000FF/808080?text=Blue+Image", "image1.png"));
-        foundImages.add(new ImageProxy("https://via.placeholder.com/400/FF0000/FFFFFF?text=Red+Image", "photo.jpg"));
-        foundImages.add(new ImageProxy("https://via.placeholder.com/350/008000/FFFFFF?text=Green+Nature", "nature.gif"));
-        foundImages.add(new ImageProxy("https://via.placeholder.com/500/FFFF00/000000?text=Yellow+Sun", "sunset.bmp"));
+        foundImages.add(new ImageProxy("https://placeholder.im/300x300.png/Blue+Image/cccccc/000000", "image1.png"));
+        foundImages.add(new ImageProxy("https://placeholder.im/300x300.png/Blue+Image/cccccc/000000", "photo.jpg"));
+        foundImages.add(new ImageProxy("https://placeholder.im/300x300.png/Blue+Image/cccccc/000000", "nature.gif"));
+        foundImages.add(new ImageProxy("https://placeholder.im/300x300.png/Blue+Image/cccccc/000000", "sunset.bmp"));
 
         for (ImageProxy proxy : foundImages) {
             JLabel label = new JLabel(proxy);
             label.setToolTipText("Click to download original image");
             label.setVerticalTextPosition(JLabel.BOTTOM);
             label.setHorizontalTextPosition(JLabel.CENTER);
-            
+
             // Interaction: Click to load real image
             label.addMouseListener(new MouseAdapter() {
                 @Override
@@ -70,7 +80,8 @@ public class VirtualProxyClient extends JFrame {
 
         imagePanel.revalidate();
         imagePanel.repaint();
-        JOptionPane.showMessageDialog(this, "Found " + foundImages.size() + " images. Click an icon to download the full image.");
+        JOptionPane.showMessageDialog(this,
+                "Found " + foundImages.size() + " images. Click an icon to download the full image.");
     }
 
     public static void main(String[] args) {
