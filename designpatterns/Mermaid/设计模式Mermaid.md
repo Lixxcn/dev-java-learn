@@ -10,33 +10,6 @@
 
 ### 类图
 
-```mermaid
-classDiagram
-    direction BT
-    class Product {
-        <<interface>>
-        +operation()
-    }
-    class ConcreteProductA {
-        +operation()
-    }
-    class ConcreteProductB {
-        +operation()
-    }
-    class SimpleFactory {
-        +createProduct(type: String) Product
-    }
-
-    ConcreteProductA ..|> Product
-    ConcreteProductB ..|> Product
-    SimpleFactory ..> ConcreteProductA : 创建
-    SimpleFactory ..> ConcreteProductB : 创建
-
-    note for SimpleFactory "根据参数通过 switch/if \n返回不同的产品实例"
-
-```
-
----
 
 ```mermaid
 classDiagram
@@ -102,36 +75,6 @@ classDiagram
 
 ### 类图
 
-```mermaid
-classDiagram
-    direction BT
-    %% 产品层次
-    class Product {
-        <<interface>>
-        +use()
-    }
-    class ConcreteProduct {
-        +use()
-    }
-
-    %% 工厂层次
-    class Factory {
-        <<interface>>
-        +factoryMethod() Product
-    }
-    class ConcreteFactory {
-        +factoryMethod() Product
-    }
-
-    ConcreteProduct ..|> Product
-    ConcreteFactory ..|> Factory
-    ConcreteFactory ..> ConcreteProduct : 实例化
-    
-    note for ConcreteFactory "return new ConcreteProduct()"
-
-```
-
----
 
 ```mermaid
 classDiagram
@@ -229,44 +172,6 @@ classDiagram
 
 ```mermaid
 classDiagram
-    direction BT
-    %% 抽象工厂
-    class AbstractFactory {
-        <<interface>>
-        +createProductA() ProductA
-        +createProductB() ProductB
-    }
-
-    %% 具体工厂
-    class ConcreteFactory1 {
-        +createProductA() ProductA
-        +createProductB() ProductB
-    }
-    
-    %% 产品A系列
-    class ProductA { <<interface>> }
-    class ConcreteProductA1
-    class ConcreteProductA2
-
-    %% 产品B系列
-    class ProductB { <<interface>> }
-    class ConcreteProductB1
-    class ConcreteProductB2
-
-    ConcreteFactory1 ..|> AbstractFactory
-    ConcreteProductA1 ..|> ProductA
-    ConcreteProductB1 ..|> ProductB
-    
-    ConcreteFactory1 ..> ConcreteProductA1 : 创建
-    ConcreteFactory1 ..> ConcreteProductB1 : 创建
-
-    note for AbstractFactory "用于创建『产品族』\n例如同时创建 Windows 风格的按钮和文本框"
-```
-
----
-
-```mermaid
-classDiagram
     class ControllerFactory {
         <<interface>>
         +createOperationController() OperationController
@@ -354,32 +259,6 @@ classDiagram
 
 ```mermaid
 classDiagram
-    class Prototype {
-        <<interface>>
-        +clone() Prototype
-    }
-
-    class ConcretePrototype {
-        -field1
-        +clone() Prototype
-    }
-
-    class Client {
-        -Prototype prototype
-        +operation()
-    }
-
-    ConcretePrototype ..|> Prototype
-    Client --> Prototype : 持有原型进行克隆
-
-    note for ConcretePrototype "clone() 通常实现为： return copy of self"
-
-```
-
----
-
-```mermaid
-classDiagram
     class Customer {
         <<Cloneable>>
         <<Serializable>>
@@ -444,49 +323,6 @@ classDiagram
 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
 
 ### 类图
-
-```mermaid
-classDiagram
-    %% 指挥者
-    class Director {
-        -Builder builder
-        +construct()
-    }
-
-    %% 抽象建造者
-    class Builder {
-        <<interface>>
-        +buildPartA()
-        +buildPartB()
-        +getResult() Product
-    }
-
-    %% 具体建造者
-    class ConcreteBuilder {
-        -Product product
-        +buildPartA()
-        +buildPartB()
-        +getResult() Product
-    }
-
-    %% 复杂产品
-    class Product {
-        -partA
-        -partB
-        +setPartA()
-        +setPartB()
-    }
-
-    Director o-- Builder : 聚合
-    ConcreteBuilder ..|> Builder
-    ConcreteBuilder o-- Product : 创建与持有
-    
-    note for Director "控制构建步骤的顺序"
-    note for ConcreteBuilder "实现具体的构建细节"
-
-```
-
----
 
 ```mermaid
 classDiagram
